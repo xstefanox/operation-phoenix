@@ -1,0 +1,14 @@
+{
+  "name": "maestrodev-avahi",
+  "version": "1.1.0",
+  "author": "maestrodev",
+  "summary": "Install Avahi packages and services",
+  "license": "Apache License, Version 2.0",
+  "source": "http://github.com/maestrodev/puppet-avahi",
+  "project_page": "http://github.com/maestrodev/puppet-avahi",
+  "issues_url": "https://github.com/maestrodev/puppet-avahi/issues",
+  "description": "Install Avahi and enable services",
+  "dependencies": [
+  
+  ]
+}

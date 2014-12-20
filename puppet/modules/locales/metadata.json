@@ -1,0 +1,14 @@
+{
+  "name": "saz-locales",
+  "version": "2.2.0",
+  "author": "saz",
+  "summary": "Manage locales on Debian/Ubuntu Linux",
+  "license": "Apache License, Version 2.0",
+  "source": "https://github.com/saz/puppet-locales",
+  "project_page": "https://github.com/saz/puppet-locales",
+  "issues_url": "https://github.com/saz/puppet-locales/issues",
+  "description": "Manage locales via Puppet",
+  "dependencies": [
+  
+  ]
+}

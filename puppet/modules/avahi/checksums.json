@@ -1,0 +1,13 @@
+{
+  "Gemfile": "0ec8d56d2343c3f3dd20abbbdd2fcd54",
+  "Gemfile.lock": "a95e34f199a7a4afe62d11ad3501f732",
+  "Modulefile": "e34099dad0f9e733bc0f276848965ea9",
+  "README.md": "03f042028705643476f5028201683c62",
+  "Rakefile": "f4e287223088e406d80579429f8c3a1b",
+  "manifests/init.pp": "5562fc58f700b754fdb4a283a4657086",
+  "manifests/package/debian.pp": "d84a0090853391fed28c516a828fdc63",
+  "manifests/package/redhat.pp": "87c6b80f88aa8fb2aa1e5f55376c4955",
+  "manifests/package.pp": "0a99ade4ab74a5a94bba01d3cd6183f8",
+  "manifests/service/redhat.pp": "7ba397444095b8a7ceaa4a8af6953e1f",
+  "manifests/service.pp": "6f1d0486daf33a2ed4807197e2e76e78"
+}
