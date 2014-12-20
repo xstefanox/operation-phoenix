@@ -1,28 +1,28 @@
-vagrant-company-template
-========================
+Operation Phoenix
+=================
 
-An experimental project to use Vagrant to create a pool of virtual machines hosting services commonly used in a company
+An experimental project to use Vagrant to create a pool of virtual machines hosting services commonly used in a company.
 
 #### This is the list of servers that will be created
 
-1. ldap.foobar.com
-2. wiki.foobar.com
-3. bugs.foobar.com
-4. git.foobar.com
-   - gitweb.foobar.com
-5. jenkins.foobar.com
+1. ldap.example.local
+2. wiki.example.local
+3. bugs.example.local
+4. git.fexample.local
+   - gitweb.fexample.local
+5. jenkins.example.local
 
-6. www.foobar.com
+6. www.example.local
 
-7. app.foobar.com
-   - node1.app.foobar.com
-   - node2.app.foobar.com
+7. app.example.local
+   - node1.app.example.local
+   - node2.app.example.local
 
-8. api.foobar.com
-   - node1.api.foobar.com
-   - node2.api.foobar.com
+8. api.example.local
+   - node1.api.example.local
+   - node2.api.example.local
 
-9. docs.foobar.com
+9. docs.example.local
 
-10. logs.foobar.com
-11. im.foobar.com
+10. logs.example.local
+11. im.example.local
