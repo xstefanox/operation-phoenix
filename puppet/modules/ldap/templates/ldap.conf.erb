@@ -1,0 +1,16 @@
+# Base server configuration
+BASE <%= @base %>
+URI  <%= @uri %>
+
+# Timeout options
+SIZELIMIT 12
+TIMELIMIT 15
+
+<%- if @ssl == true -%>
+# SSL
+<% if @ssl_cacertdir %>TLS_CACERTDIR <%= @ssl_cacertdir %><%- end %>
+TLS_CACERT <%= @ssl_cacert %>
+TLS_CERT <%= @ssl_cert %>
+TLS_KEY <%= @ssl_key %>
+TLS_REQCERT <%= @ssl_reqcert %>
+<% end -%>

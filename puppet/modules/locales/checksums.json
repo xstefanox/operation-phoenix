@@ -1,11 +1,12 @@
 {
-  "Modulefile": "5fc1f7f24769f7951fbbd4d14fd33c61",
-  "README.md": "b300285e128a340904845bea1342e0eb",
-  "manifests/init.pp": "e254f7b8baae8cfb182539f2cf50d8e4",
-  "manifests/params.pp": "cb92e53b06b8a52a1dc14e9664f5afa9",
+  "Gemfile": "ecaea4ef7cc80a9f98a4e77d8ae028a4",
+  "LICENSE": "2d9c14720c9adef6ab3197a70adb690c",
+  "README.md": "d2535d4bb3ab868bbd4acf3236114265",
+  "Rakefile": "de8eeacfe1fbbc6a6f4d89adfc98bcaf",
+  "manifests/init.pp": "5d644ecc803232c85b881be8ee534561",
+  "metadata.json": "0c98f4ef54ea9684b494c010bdefe0d0",
   "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
-  "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
-  "templates/locale.erb": "9ea0f399b2daeb77cb7b2d1f5a98f73d",
-  "templates/locale.gen.erb": "d2e643c0cbe682d9334becee5598079c",
-  "tests/init.pp": "b924c2e05e488a0118ce375341477886"
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+  "templates/default_locales.erb": "bd12e51ad186e319b269bd6c34326845",
+  "tests/init.pp": "1b3a14454150f5e241af0e65930b374a"
 }

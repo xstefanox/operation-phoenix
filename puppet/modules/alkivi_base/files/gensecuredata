@@ -1,0 +1,115 @@
+#!/bin/bash
+set -e
+
+#
+#   Display help
+#
+help()
+{
+    cat <<EOF
+    $PROGNAME : [OPTIONS]
+    --save            Set the filename
+    --savedir         Set the path where to store password (default /root/.passwd)
+    --type
+
+    sql_related
+    --host            
+    --user
+    --dbname
+    --password
+    TODO : port ?
+    
+    api_ovh related
+    --applicationKey
+    --applicationSecret
+    --consumerKey
+
+EOF
+}
+
+
+
+ID=`id -u`
+if [ "$ID" -ne "0" ]; then
+    echo "Script must be run as root"
+    exit 2
+fi
+
+ROOTDIR=/alkivi/.secureData
+
+# Parse command line
+while [ "$#" -gt 0 ] ; do
+    case $1 in
+        --help)
+            help
+            exit 0
+            ;;
+        --save)
+            NAME=$2
+            shift
+            ;;
+        --savedir)
+            ROOTDIR=$2
+            shift    
+            ;;
+        --host)
+            HOST=$2
+            shift    
+            ;;
+        --user)
+            USER=$2
+            shift    
+            ;;
+        --password)
+            PASSWORD=$2
+            shift    
+            ;;
+        --dbname)
+            DBNAME=$2
+            shift    
+            ;;
+        --applicationKey)
+            AK=$2
+            shift    
+            ;;
+        --applicationSecret)
+            AS=$2
+            shift    
+            ;;
+        --consumerKey)
+            CK=$2
+            shift    
+            ;;
+        --type)
+            TYPE=$2
+            shift    
+            ;;
+        *)
+            echo "Unknown option '$1'"
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+# Insure rootdir is present 
+mkdir -p $ROOTDIR
+chmod 750 $ROOTDIR
+chown alkivi:alkivi $ROOTDIR
+
+if [ $TYPE == 'sql' ]; then
+    if [ -z $PASSWORD ]; then
+        # TODO : use genpwd 
+        PASSWORD=`cat /root/.passwd/db/$USER`
+    fi
+    echo "$HOST:$USER:$DBNAME:$PASSWORD" > $ROOTDIR/$NAME
+    chmod 440 $ROOTDIR/$NAME
+elif [ $TYPE == 'api_ovh' ]; then
+    echo "$AK:$AS:$CK" > $ROOTDIR/$NAME
+fi
+
+chown alkivi:alkivi $ROOTDIR/$NAME
+chmod 400 $ROOTDIR/$NAME
+
+exit 0
+

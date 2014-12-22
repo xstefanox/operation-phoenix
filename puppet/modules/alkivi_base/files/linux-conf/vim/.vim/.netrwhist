@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/etc/puppet/modules/apache/templates/vhost'
+let g:netrw_dirhist_2='/home/alkivi/scripts/default-www'
+let g:netrw_dirhist_3='/home/alkivi/scripts/default-www/views'
+let g:netrw_dirhist_4='/etc/puppet/modules/phpldapadmin/manifests'
+let g:netrw_dirhist_5='/etc/puppet/modules/apache/manifests'
+let g:netrw_dirhist_6='/etc/puppet/modules/postfix/manifests'
+let g:netrw_dirhist_7='/etc/puppet/modules/alkivi_app'
+let g:netrw_dirhist_8='/etc/puppet/modules/zabbix/manifests/proxy'

@@ -1,0 +1,29 @@
+{
+  "name": "alkivi-console_data",
+  "version": "0.0.1",
+  "source": "https://github.com/alkivi-sas/puppet-console_data",
+  "author": "alkivi",
+  "license": "LGPLv3",
+  "summary": "Controls console-data",
+  "description": "Setup console-data keymap and stuff",
+  "project_page": "https://github.com/alkivi-sas/puppet-console_data",
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "LICENSE": "c8156b3403995b12675506b785491cd2",
+    "Modulefile": "abb7ce73c3ac240556eb43dc7700f247",
+    "README.md": "1c5b7de691845e072be43e984a832d2d",
+    "TODO.md": "f262c8077476f6bf7ba93da2573c014e",
+    "manifests/config.pp": "8c774da2c65768641710e71a7e018337",
+    "manifests/init.pp": "818701ff5e098f3a35f37dc64f52b400",
+    "manifests/install.pp": "d25c86df283fbd26d7ce40d859dc99bc",
+    "manifests/params.pp": "bab0301b05cc981c0112125790567ef5",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "templates/preseed.erb": "7e9cd34639099327b59dc1d68b9f7d78",
+    "tests/init.pp": "5fab1cf35685b290a8a29b13c4445d0c"
+  }
+}

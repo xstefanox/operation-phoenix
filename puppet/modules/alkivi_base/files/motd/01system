@@ -1,0 +1,12 @@
+#/bin/sh
+
+echo -e "\033[0;35m++++++++++++++++++++++++++++++++++++++: \033[0;37mSystem Data\033[0;35m :+++++++++++++++++++++++++++++++++++++++++
++  \033[0;37mHostname \033[0;35m= \033[1;32m`hostname`
+\033[0;35m+   \033[0;37mAddress \033[0;35m= \033[1;32m`ip addr show eth0 | grep 'inet ' | cut -d ' ' -f6 | head -1`
+\033[0;35m+   \033[0;37mDistrib \033[0;35m= \033[1;32m`facter lsbdistdescription`
+\033[0;35m+    \033[0;37mKernel \033[0;35m= \033[1;32m`uname -r`
+\033[0;35m+    \033[0;37mUptime \033[0;35m= \033[1;32m`uptime | sed 's/.*up ([^,]*), .*/1/'`
+\033[0;35m+       \033[0;37mCPU \033[0;35m= \033[1;32m`cat /proc/cpuinfo | grep 'model name' | wc -l`x `cat /proc/cpuinfo | grep 'model name' | cut -d ':' -f2 | head -1`
+\033[0;35m+    \033[0;37mMemory \033[0;35m= \033[1;32m`cat /proc/meminfo | grep MemTotal | awk {'print $2'}` kB
+\033[0;35m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo -e "\033[0m"

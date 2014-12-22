@@ -121,19 +121,36 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #
     #   chef.validation_client_name = "ORGNAME-validator"
 
-    config.vm.define "test-vm" do |web|
+    config.vm.define "ldap" do |web|
 
         web.vm.box = "ubuntu/trusty64"
-        web.vm.hostname = "example"
+        web.vm.hostname = "ldap.example.org"
 
         web.vm.network "private_network", ip: "192.168.0.2"
 
+#         config.vm.provider :virtualbox do |vb|
+#             vb.customize [ "modifyvm", :id, "--memory", 128 ]
+#         end
+
         web.vm.provision "puppet" do |puppet|
-            puppet.manifests_path = "./puppet"
-            puppet.manifest_file = "www.example.pp"
+            puppet.manifests_path = "./puppet/manifests"
+            puppet.manifest_file = "ldap.example.pp"
             puppet.module_path = "./puppet/modules"
         end
 
     end
+
+#     config.vm.define "test-vm2" do |web|
+#
+#         web.vm.box = "ubuntu/trusty64"
+#         web.vm.hostname = "example2"
+#
+#         web.vm.network "private_network", ip: "192.168.0.3"
+#
+#         config.vm.provider :virtualbox do |vb|
+#             vb.customize [ "modifyvm", :id, "--memory", 128 ]
+#         end
+#
+#     end
 
 end

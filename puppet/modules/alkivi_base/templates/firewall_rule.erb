@@ -1,0 +1,7 @@
+# Automatically generated using alkivi_base::firewall_rule via puppet
+
+*<%= @table %>
+
+-A <%= @chain %> -p <%= @protocol %> <% if @dest_port %>--dport <%= @dest_port %><% end %> <% if @source_port %>--sport <%= @source_port %><% end %> -j <%= @rule %> -m comment --comment "<%= @comment %>"
+
+COMMIT

@@ -1,0 +1,65 @@
+{
+  "name": "alkivi-alkivi_base",
+  "version": "0.1.0",
+  "source": "https://github.com/alkivi-sas/puppet-alkivi_base",
+  "author": "alkivi",
+  "license": "LGPLv3",
+  "summary": "Controls basic configuration of alkivi server",
+  "description": "Setup basic users, ssh keys, packages, configure console, keymap, tzdata and stuff",
+  "project_page": "https://github.com/alkivi-sas/puppet-alkivi_base",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=3.0.0"
+    },
+    {
+      "name": "puppetlabs/ntp",
+      "version_requirement": ">=2.0.0"
+    },
+    {
+      "name": "adrien/alternatives",
+      "version_requirement": ">=0.1.1"
+    },
+    {
+      "name": "attachmentgenie/locales",
+      "version_requirement": ">=1.0.2"
+    },
+    {
+      "name": "alkivi/console_data",
+      "version_requirement": ">=0.0.1"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "LICENSE": "c8156b3403995b12675506b785491cd2",
+    "Modulefile": "a3bd8c45f3efb05379e71c061df0a5d5",
+    "README.md": "1a31bcce99f8461f0f7f8825eb698a80",
+    "TODO.md": "366d3df09286404c7565ee3cfca010c0",
+    "files/display_motd.sh": "69fc50a1f7df45fed355dcdd934f1829",
+    "files/genpwd": "3a4a2557a1173e66bdcac5b44ab13630",
+    "files/gensecuredata": "0ed3676d3e4824a2dff93c9556d5f74e",
+    "files/motd/00alkivi": "3d505d63bba10a1022ae38f28ebbf133",
+    "files/motd/01system": "81ba15980750e20027fe473bc6b6a0f5",
+    "files/motd/02puppet": "b71412fd601d8f5ea9017309ff400013",
+    "files/motd/03tickets": "1634f6c6b013618e9c486968d0c607d0",
+    "files/setpwd": "0fdfc59834bdc7df216c26b69f29a2d3",
+    "lib/puppet/parser/functions/alkivi_password.rb": "964894cbcbc38ebc618ed40c987e4802",
+    "manifests/config.pp": "6809edb8381cc896b8243992946bb6c4",
+    "manifests/firewall_rule.pp": "b8d04d6dc8d9799b21ed59c39a67e402",
+    "manifests/init.pp": "d6a3534d7d92c01bdd69d479bb98d045",
+    "manifests/install.pp": "61f7d923c2c98c98bac0aeda22813e93",
+    "manifests/params.pp": "c9aaf386016e418ea6d2ecb8e7a9041d",
+    "manifests/passwd.pp": "af7062a3eedf148cc60307e5c0c1e54f",
+    "manifests/scripts.pp": "3655dadab99d3c135b8b405c16d081da",
+    "manifests/securedata.pp": "c098d8b09bdd50dad0fa27ff07ddf131",
+    "manifests/service.pp": "72faa4a807ce8e19da4b98c4b087f15b",
+    "manifests/users.pp": "f57b339d6f79ce98ff3a26833791e78a",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "templates/alkivi_authorized_keys.erb": "3af218b138b92e9b1cd35694bb2ddf2b",
+    "templates/firewall_rule.erb": "974c9c3b88264a29524d9c0a978a8c16",
+    "templates/root_authorized_keys.erb": "5b0bfec0766d38ec0dc89211368f60b8",
+    "tests/init.pp": "5fab1cf35685b290a8a29b13c4445d0c"
+  }
+}

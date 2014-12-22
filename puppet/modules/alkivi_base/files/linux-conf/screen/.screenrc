@@ -1,0 +1,16 @@
+# Bind F11 and F12 (NOT F1 and F2) to previous and next screen window
+bindkey -k F1 prev
+bindkey -k F2 next
+bindkey -k F7 windows
+
+startup_message off
+
+# Window list at the bottom.
+hardstatus alwayslastline "%= %3n %t%? [%h]%? %="
+caption always "%= %-w%L>%{= BW}%n*%t%{-}%52<%+w %L="
+
+# From Stephen Shirley
+# Don't block command output if the terminal stops responding
+# (like if the ssh connection times out for example).
+nonblock on
+

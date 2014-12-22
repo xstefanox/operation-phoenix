@@ -1,0 +1,17 @@
+#/bin/sh
+
+if [ ! -e "/etc/motd.tickets" ];then exit 0; fi
+
+IFS=$'\n'
+set -f
+
+echo -e "\033[0;35m++++++++++++++++++++++++++++++++++++: \033[0;37mLatest Issues\033[0;35m :++++++++++++++++++++++++++++++++++++++++"
+for module in `cat /etc/motd.tickets`; do
+date=`echo $module | cut -d ':' -f1`
+state=`echo $module | cut -d ':' -f2`
+name=`echo $module | cut -d ':' -f3`
+tags=`echo $module | cut -d ':' -f4`
+echo -e "\033[0;35m+    \033[0;37m$date \033[1;36m$state \033[0;36m$name \033[1;32mtags : $tags"
+done
+echo -e "\033[0;35m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo -e "\033[0m"

@@ -1,0 +1,95 @@
+#!/bin/bash
+set -e
+
+#
+#   Display help
+#
+help()
+{
+    cat <<EOF
+    $PROGNAME : [OPTIONS]
+    --save            Set the filename
+    --savedir         Set the path where to store password (default /root/.passwd)
+    --print           Print the password to stdout (puppet use that) 
+
+EOF
+}
+
+
+
+ID=`id -u`
+if [ "$ID" -ne "0" ]; then
+    echo "Script must be run as root"
+    exit 2
+fi
+
+ROOTDIR=/root/.passwd
+PRINT=0
+LENGTH=15
+
+# Parse command line
+while [ "$#" -gt 0 ] ; do
+    case $1 in
+        --help)
+            help
+            exit 0
+            ;;
+        --save)
+            NAME=$2
+            shift
+            ;;
+        --savedir)
+            ROOTDIR=$2
+            shift    
+            ;;
+        --print)
+            PRINT=1
+            ;;
+        --length)
+            LENGTH=$2
+            shift
+            ;;
+        *)
+            echo "Unknown option '$1'"
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+PASSWORD=`< /dev/urandom tr -dc A-Za-z0-9 | head -c\${1:-$LENGTH};echo;`
+
+
+# No name, print directly
+if [ -z "$NAME" ]; then
+    echo -n $PASSWORD
+    exit 0
+fi
+
+PASSWORD_FILE="$ROOTDIR/$NAME"
+
+# Insure rootdir is present 
+mkdir -p $ROOTDIR
+chmod 700 $ROOTDIR
+
+if [ -f $PASSWORD_FILE ]; then
+    if [ $PRINT -eq 0 ]; then
+        echo "Password $NAME already exists"
+        exit 2
+    else
+        echo -n `cat $PASSWORD_FILE`
+        exit 0
+    fi
+fi
+
+touch $PASSWORD_FILE
+echo $PASSWORD > $PASSWORD_FILE
+chmod 600 $PASSWORD_FILE
+
+if [ $PRINT -eq 0 ]; then
+    echo "Password $NAME successfully generated in $PASSWORD_FILE"
+else
+    echo $PASSWORD
+fi
+exit 0
+

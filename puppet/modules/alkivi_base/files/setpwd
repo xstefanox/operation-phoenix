@@ -1,0 +1,64 @@
+#!/bin/bash
+set -e
+
+#
+#   Display help
+#
+help()
+{
+    cat <<EOF
+    $PROGNAME : [OPTIONS]
+    --name            Set the filename
+EOF
+}
+
+
+
+ID=`id -u`
+if [ "$ID" -ne "0" ]; then
+    echo "Script must be run as root"
+    exit 2
+fi
+
+
+# Parse command line
+while [ "$#" -gt 0 ] ; do
+    case $1 in
+        --help)
+            help
+            exit 0
+            ;;
+        --name)
+            NAME=$2
+            shift
+            ;;
+        *)
+            echo "Unknown option '$1'"
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+if [ -z $NAME ]; then
+    echo "Name must be present"
+    help
+    exit 1
+fi
+
+ROOTDIR=/root/.passwd
+PASSWORD_FILE="$ROOTDIR/$NAME"
+
+if [ -f $PASSWORD_FILE ]; then
+    PASSWD=`cat $PASSWORD_FILE`
+else
+    PASSWD=`genpwd --save $NAME --print`
+fi
+
+passwd $NAME 2> /dev/null <<EOF
+$PASSWD
+$PASSWD
+EOF
+
+exit 0
+
